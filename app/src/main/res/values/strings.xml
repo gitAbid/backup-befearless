@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Backup - Be Fearless</string>
+    <string name="signup_text">SignUp</string>
+    <string name="sign_in_text">SignIn</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="email_or_phone_text">Email or Phone</string>
+    <string name="password_text">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="name_text">Name</string>
+    <string name="be_fearless">Be Fearless</string>
+    <string name="backup">Backup</string>
+    <string name="contacts">Contacts</string>
+    <string name="profile">Profile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_number">Add Number</string>
+    <string name="add">Add</string>
+    <string name="backup_shaker">Backup shake detector is running</string>
+    <string name="send_message_on_shake">Send message on shake</string>
+    <string name="logout">Logout</string>
+    <string name="gps_network_not_enabled">GPS is not enabled. Please enable gps location for continue</string>
+    <string name="gps_off">GPS is off</string>
+    <string name="open_location_settings">Location Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="phone_hint">+880XXXXXXXXXX</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="about">About</string>
+    <string name="version">Version</string>
+
+</resources>

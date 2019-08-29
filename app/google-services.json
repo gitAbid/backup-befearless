@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "918981768888",
+    "firebase_url": "https://backup-be-fearless.firebaseio.com",
+    "project_id": "backup-be-fearless",
+    "storage_bucket": "backup-be-fearless.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918981768888:android:0c78a1d22d7758e7",
+        "android_client_info": {
+          "package_name": "com.example.backup_befearless"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918981768888-ca6s2j7neti9pg157rb78n3ofulftpj2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.backup_befearless",
+            "certificate_hash": "bdfa9092ef83474b34b3dcd179ec5e209fc3bcb2"
+          }
+        },
+        {
+          "client_id": "918981768888-l71djr62i9hhd10bnks7lehq1hd6dfl1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdGN4Sz12jP3GiHZrekfKJoi5UUro9AZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918981768888-l71djr62i9hhd10bnks7lehq1hd6dfl1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
