@@ -28,5 +28,6 @@
     <string name="phone_number">Phone Number</string>
     <string name="about">About</string>
     <string name="version">Version</string>
+    <string name="already_have_account">Already have account?</string>
 
 </resources>

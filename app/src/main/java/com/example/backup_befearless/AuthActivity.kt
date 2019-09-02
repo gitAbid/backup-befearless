@@ -42,10 +42,10 @@ class AuthActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_auth)
         pbAuthProgress.isIndeterminate = true
+        tvSignUp.setOnClickListener { showSignUpView() }
         btnSignIn.setOnClickListener {
             authenticate()
         }
-        tvSignUp.setOnClickListener { showSignUpView() }
     }
 
     private fun requestPermission() {
@@ -83,7 +83,9 @@ class AuthActivity : AppCompatActivity() {
             visibility = View.VISIBLE
             tvSignUp.text = getString(R.string.sign_in_text)
             btnSignIn.text = getString(R.string.signup_text)
+            tvAccountText.text=getString(R.string.already_have_account)
         } else {
+            tvAccountText.text=getString(R.string.don_t_have_an_account)
             visibility = View.GONE
             tvSignUp.text = getString(R.string.signup_text)
             btnSignIn.text = getString(R.string.sign_in_text)
@@ -94,51 +96,52 @@ class AuthActivity : AppCompatActivity() {
 
     private fun authenticate() {
         val intent = Intent(this, MainActivity::class.java)
-        if (btnSignIn.text.equals(getString(R.string.signup_text)) && validSignUp()) {
-            pbAuthProgress.visibility = View.VISIBLE
-            mAuth?.createUserWithEmailAndPassword(
-                etEmailPhone.text.toString(),
-                etPassword.text.toString()
-            )?.addOnCompleteListener(
-                this
-            ) { task ->
-                if (task.isSuccessful) {
-                    val user = mAuth?.currentUser
-                    val userData = User(
-                        uid = user?.uid,
-                        name = etName.text.toString().trim(),
-                        numbers = listOf(),
-                        emergencyMessage = LocationUtilities.getMessage(
-                            locationManager,
-                            "",
-                            etName.text.toString().trim()
+        if (btnSignIn.text.equals(getString(R.string.signup_text))) {
+            if (validSignUp()) {
+                pbAuthProgress.visibility = View.VISIBLE
+                mAuth?.createUserWithEmailAndPassword(
+                    etEmailPhone.text.toString(),
+                    etPassword.text.toString()
+                )?.addOnCompleteListener(
+                    this
+                ) { task ->
+                    if (task.isSuccessful) {
+                        val user = mAuth?.currentUser
+                        val userData = User(
+                            uid = user?.uid,
+                            name = etName.text.toString().trim(),
+                            numbers = listOf(),
+                            emergencyMessage = LocationUtilities.getMessage(
+                                locationManager,
+                                "",
+                                etName.text.toString().trim()
+                            )
                         )
-                    )
-                    val db = FirebaseFirestore.getInstance()
-                    db.collection("users").document(user?.uid.toString()).set((userData))
-                        .addOnSuccessListener {
-                            startActivity(intent)
-                        }
-                        .addOnFailureListener {
-                            pbAuthProgress.visibility = View.GONE
-                            Snackbar.make(
-                                container,
-                                it.message.toString(),
-                                Snackbar.LENGTH_LONG
-                            ).show()
-                        }
+                        val db = FirebaseFirestore.getInstance()
+                        db.collection("users").document(user?.uid.toString()).set((userData))
+                            .addOnSuccessListener {
+                                startActivity(intent)
+                            }
+                            .addOnFailureListener {
+                                pbAuthProgress.visibility = View.GONE
+                                Snackbar.make(
+                                    container,
+                                    it.message.toString(),
+                                    Snackbar.LENGTH_LONG
+                                ).show()
+                            }
 
-                } else {
-                    pbAuthProgress.visibility = View.GONE
-                    val e = task.exception as FirebaseException
-                    Snackbar.make(
-                        container,
-                        e.message.toString(),
-                        Snackbar.LENGTH_LONG
-                    ).show()
+                    } else {
+                        pbAuthProgress.visibility = View.GONE
+                        val e = task.exception as FirebaseException
+                        Snackbar.make(
+                            container,
+                            e.message.toString(),
+                            Snackbar.LENGTH_LONG
+                        ).show()
+                    }
                 }
             }
-
         } else if (validSignIn()) {
             pbAuthProgress.visibility = View.VISIBLE
             mAuth?.signInWithEmailAndPassword(

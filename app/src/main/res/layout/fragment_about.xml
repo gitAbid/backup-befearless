@@ -49,6 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_20dp"
             android:fontFamily="@font/worksans_regular"
+            android:gravity="center"
+            android:text="BACKUP - Be Fearless is a safety application which ensure women’s safety in workplace as well as in public place. Safety has become a necessity and with the security apps women can stay in continuous contact with family and friends. The main objective of security alerts is to send emergency alerts to people who can really act in time. Instant alerts can save women from becoming a victim of attacks."
             android:textColor="@color/colorWhite" />
     </LinearLayout>
 </RelativeLayout>

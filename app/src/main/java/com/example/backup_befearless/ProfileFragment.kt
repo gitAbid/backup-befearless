@@ -145,7 +145,7 @@ class ProfileFragment : Fragment() {
     private fun isMyServiceRunning(): Boolean {
         val manager = activity?.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager?
         for (service in manager!!.getRunningServices(Integer.MAX_VALUE)) {
-            if (ShakerService::class.java.getName() == service.service.className) {
+            if (ShakerService::class.java.name == service.service.className) {
                 return true
             }
         }

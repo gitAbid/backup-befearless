@@ -26,23 +26,9 @@ class AboutFragment : Fragment() {
 
 
         val versionName =
-            context?.packageManager?.getPackageInfo(context?.packageName, 0)?.versionName
+            context?.packageManager?.getPackageInfo(context?.packageName, 0)?.versionName!!
         tvActionBarTitle.text = getString(R.string.about)
         tvVersion.text = versionName
-
-
-        val db = FirebaseFirestore.getInstance()
-
-        var data: User
-        val auth = FirebaseAuth.getInstance()
-
-
-        val docRef = db.collection("users").document(auth.currentUser?.uid.toString())
-        docRef.get().addOnSuccessListener {
-            data = it.toObject(User::class.java)!!
-            tvAbout.text = data.about
-
-        }
 
     }
 
