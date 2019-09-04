@@ -28,7 +28,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dimen_10dp"
                 android:fontFamily="@font/worksans_regular"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorBlack"
                 android:textSize="@dimen/dimen_20sp"
                 android:textStyle="bold" />
 
@@ -39,7 +39,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/dimen_10dp"
                 android:fontFamily="@font/worksans_regular"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorBlack"
                 android:textSize="@dimen/dimen_18sp" />
         </LinearLayout>
 
@@ -49,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="15"
+            android:tint="@color/colorBlack"
             android:background="@drawable/circular_ripple"
             android:clickable="true"
             android:focusable="true"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/background"
     tools:context=".AuthActivity">
 
     <LinearLayout
@@ -47,10 +47,10 @@
 
         <ProgressBar
             android:id="@+id/pbAuthProgress"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_20sp"/>
+            android:layout_marginTop="@dimen/dimen_20sp"
+            android:visibility="gone" />
     </LinearLayout>
 
 
@@ -162,10 +162,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:background="@color/colorAccent"
+            android:backgroundTint="@color/colorWhite"
             android:padding="@dimen/dimen_16dp"
             android:text="@string/sign_in_text"
             android:textAllCaps="false"
+            android:textColor="@color/colorBlack"
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="@dimen/dimen_4dp"
@@ -193,12 +194,12 @@
 
             <TextView
                 android:id="@+id/tvSignUp"
-                android:padding="@dimen/dimen_10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:padding="@dimen/dimen_10dp"
                 android:text="@string/signup_text"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorPrimary"
                 app:fontFamily="@font/worksans_regular" />
         </LinearLayout>
 
